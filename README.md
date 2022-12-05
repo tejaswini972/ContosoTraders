@@ -37,7 +37,7 @@ Microservices are a popular architectural style for building applications that a
    - Azure SQL: Azure SQL Database is an always-up-to-date, fully managed relational database service built for the cloud. Build your next app with the simplicity and flexibility of a multi-model database that scales to meet demand. Here, in this application azure sql holds the data of products.
    - Azure Cosmos DB: It offers single-digit millisecond response times, automatic and instant scalability, along with guarantee speed at any scale. Here, in this application Cosmos DB holds the data of Stocks/Inventory.
 
- * Image Search:
+ * Image Search: An image search engine is a tool that helps you find appropriate images to use in your online store.
    - App Service (Containerized): A service that enables a developer to deploy containers on the Microsoft Azure public cloud without having to provision or manage any underlying infrastructure.
    - Cognitive Service (Computer Vision): An AI service that analyzes content in images and video. The Computer Vision service provides developers with access to advanced algorithms for processing images and returning information.
    - Storage Account: The storage account provides a unique namespace which provides highly available, durable, scalable and redundant storage. Here, in this application storage accounts stores the images of the products available in the application.
