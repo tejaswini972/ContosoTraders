@@ -61,7 +61,7 @@ The primary use of a CDN is to decrease load times across a geographical area an
 ![](https://raw.githubusercontent.com/microsoft/ContosoTraders/main/docs/architecture/contoso-traders-enhancements.drawio.png)
 
 
-## Steps
+## Instructions
 
 1. Open browser, using a new tab navigate to `https://github.com/microsoft/ContosoTraders` GitHub repository. This repository conatins all the neccessary files and documents which will guide you to host the contoso traders application from the scratch.
 
