@@ -16,31 +16,39 @@ Contoso Traders is a 2 tier application and consists of Client tier.
 
 Presentation tier conatins the React JS application that acts as a client, collects the the information given by the user and passes it to Database tier. It consists of a collection of small, autonomous services. Each service is self-contained and should implement a single business capability within a bounded context. A bounded context is a natural division within a business and provides an explicit boundary within which a domain model exists.
 
-Backend tier consists of 3 API components that are containerized.
+### DEVOPS
 
-1. Shopping Cart: An Azure containerized app 
-2. Produtcs &Inventory: Contains a kubernetes cluster
-3. Image Search: Containerized app service.
+The word DevOps is a combination of the terms development and operations, meant to represent a collaborative or shared approach to the tasks performed by a company's application development and IT operations teams. While DevOps is not a technology, DevOps environments generally apply common methodologies.
 
-The workflow named Contoso-traders-infra-provisioning.yml will invoke the Bicep template that deploys the ACI app and AKS cluster.
+DEVOPS consists of 2 components
+
+1. **GitHub (Reposistry and Actions)**: A code hosting platform for version control and collaboration.
+
+   - **GitHub Repository**: A repository contains all of your project's files and each file's revision history. You can discuss and manage your project's work within the repository. You can find the **ContosoTraders** Application's GitHub repository here `https://github.com/microsoft/ContosoTraders`.
+   - **GitHub Actions**: A continuous integration and continuous delivery (CI/CD) platform that allows you to automate your build, test, and deployment pipeline. In this application you are deploying Azure Infrastructure using the Bicep template with the GitHub Workflow.
+
+2. **Container Registry**: Allows you to build, store, and manage container images and artifacts in a private registry for all types of container deployments.
+    
 
 ### MICROSERVICES
 
 Microservices are a popular architectural style for building applications that are resilient, highly scalable, independently deployable, and able to evolve quickly. It consists of a collection of small, autonomous services. Each service is self-contained and should implement a single business capability within a bounded context. A bounded context is a natural division within a business and provides an explicit boundary within which a domain model exists.
 
- * **Shopping Cart**: A place on a website that keeps a record of the items that you have chosen to buy from the website, until you pay for it.
-   - **Azure Container App**: Fully managed serverless container service for building and deploying modern apps at scale which helps in deploying containerised apps without managing complex infrastructure.
-   - **Azure Cosmos DB**: A fully managed NoSQL and relational database for modern app development.
+Backend tier consists of 3 API components that are containerized.
 
- * **Products and Stocks/Inventory**: A product is any item or service you sell to serve a customer's need or want. Inventory refers to a company's goods and products that are ready to sell, along with the raw materials that are used to produce them.
+1. **Shopping Cart**: A place on a website that keeps a record of the items that you have chosen to buy from the website, until you pay for it.
+   - **Azure Container App**: Fully managed serverless container service for building and deploying modern apps at scale which helps in deploying containerised apps without managing complex infrastructure.
+   - **Azure Cosmos DB**: A fully managed NoSQL and relational database for modern app development. Cosmos DB holds the data of products which you add to the shopping cart.
+
+2. **Products and Stocks/Inventory**: A product is any item or service you sell to serve a customer's need or want. Inventory refers to a company's goods and products that are ready to sell, along with the raw materials that are used to produce them.
    - **Azure Kubernetes service**: Simplifies deploying a managed Kubernetes cluster in Azure by offloading the operational overhead to Azure. Controller commands, Service layer repositories and Data Model encapsulated in AKS.
    - **Azure SQL**: Azure SQL Database is an always-up-to-date, fully managed relational database service built for the cloud. Build your next app with the simplicity and flexibility of a multi-model database that scales to meet demand. Here, in this application azure sql holds the data of products.
    - **Azure Cosmos DB**: It offers single-digit millisecond response times, automatic and instant scalability, along with guarantee speed at any scale. Here, in this application Cosmos DB holds the data of Stocks/Inventory.
 
- * **Image Search**: An image search engine is a tool that helps you find appropriate images to use in your online store.
+3. **Image Search**: An image search engine is a tool that helps you find appropriate images to use in your online store.
    - **App Service (Containerized)**: A service that enables a developer to deploy containers on the Microsoft Azure public cloud without having to provision or manage any underlying infrastructure.
-   - **Cognitive Service (Computer Vision)**: An AI service that analyzes content in images and video. The Computer Vision service provides developers with access to advanced algorithms for processing images and returning information.
-   - **Storage Account**: The storage account provides a unique namespace which provides highly available, durable, scalable and redundant storage. Here, in this application storage accounts stores the images of the products available in the application.
+   - **Cognitive Service (Computer Vision)**: An AI service that analyzes content in images and video. The Computer Vision service provides developers with access to advanced algorithms for processing images and returning the product information that are stored in the storage account.
+   - **Storage Account**: The storage account provides a unique namespace which provides highly available, durable, scalable and redundant storage. Here, in this application storage accounts stores the images of the products available in the application, which can be accessed by computer vision and app service.
 
 
 ![](https://raw.githubusercontent.com/microsoft/ContosoTraders/main/docs/architecture/contoso-traders-enhancements.drawio.png)
@@ -52,7 +60,7 @@ Microservices are a popular architectural style for building applications that a
 
 1. Navigate to github/workflows folder, it contains the workflow YAML files using which you can the deployment resources. Please see the individual workflows for more information.
 
-1. contoso-traders-infra-deployment.yml will deploy the infrastructure into Azure which includes resource groups, resources, sets access policies to key vaults, and seeds the database from storage accounts into an Azure SQL database.
+1. contoso-traders-infra-deployment.yml will deploy the infrastructure into Azure which includes resource groups, resources, sets access policies to key vaults, and seeds the database from storage accounts into an Azure SQL database. This workflow will invoke the Bicep template that deploys the ACI app and AKS cluster.
 
 1. contoso-traders-app-deployment.yml deploys the application to Azure cloud. The application is configured to use the pre-deployed resources.
 
