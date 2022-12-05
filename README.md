@@ -38,3 +38,4 @@ The workflow named Contoso-traders-infra-provisioning.yml will invoke the Bicep 
 1. contoso-traders-app-deployment.yml deploys the application to Azure cloud. The application is configured to use the pre-deployed resources.
 
 1. contoso-traders-load-testing.yml configures the load testing for the application.
+
