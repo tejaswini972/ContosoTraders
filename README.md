@@ -12,7 +12,7 @@ You will explore the Contoso traders code base present in a GitHub repository wh
 
 ## Solution Architecture
 
-Contoso Traders is a 2 tier application and consists of Client tier
+Contoso Traders is a 2 tier application and consists of Client tier.
 
 Presentation tier conatins the React JS application that acts as a client, collects the the information given by the user and passes it to Database tier.
 
@@ -24,6 +24,8 @@ Backend tier consists of 3 API components that are containerized.
 
 The workflow named Contoso-traders-infra-provisioning.yml will invoke the Bicep template that deploys the ACI app and AKS cluster.
 
+![](https://raw.githubusercontent.com/microsoft/ContosoTraders/main/docs/architecture/contoso-traders-enhancements.drawio.png)
+
 
 ## Steps
 
@@ -31,7 +33,7 @@ The workflow named Contoso-traders-infra-provisioning.yml will invoke the Bicep 
 
 1. Navigate to github/workflows folder, it contains the workflow YAML files using which you can the deployment resources. Please see the individual workflows for more information.
 
-1. Contoso-traders-infra-deployment.yml will deploy the infrastructure into Azure which includes resource groups, resources, sets access policies to key vaults, and seeds the database from storage accounts into an Azure SQL database.
+1. contoso-traders-infra-deployment.yml will deploy the infrastructure into Azure which includes resource groups, resources, sets access policies to key vaults, and seeds the database from storage accounts into an Azure SQL database.
 
 1. contoso-traders-app-deployment.yml deploys the application to Azure cloud. The application is configured to use the pre-deployed resources.
 
