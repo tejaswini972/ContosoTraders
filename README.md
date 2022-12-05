@@ -28,19 +28,19 @@ The workflow named Contoso-traders-infra-provisioning.yml will invoke the Bicep 
 
 Microservices are a popular architectural style for building applications that are resilient, highly scalable, independently deployable, and able to evolve quickly. It consists of a collection of small, autonomous services. Each service is self-contained and should implement a single business capability within a bounded context. A bounded context is a natural division within a business and provides an explicit boundary within which a domain model exists.
 
- * Shopping Cart: A place on a website that keeps a record of the items that you have chosen to buy from the website, until you pay for it.
-   - Azure Container App: Fully managed serverless container service for building and deploying modern apps at scale which helps in deploying containerised apps without managing complex infrastructure.
-   - Azure Cosmos DB: A fully managed NoSQL and relational database for modern app development.
+ * **Shopping Cart**: A place on a website that keeps a record of the items that you have chosen to buy from the website, until you pay for it.
+   - **Azure Container App**: Fully managed serverless container service for building and deploying modern apps at scale which helps in deploying containerised apps without managing complex infrastructure.
+   - **Azure Cosmos DB**: A fully managed NoSQL and relational database for modern app development.
 
- * Products and Stocks/Inventory: A product is any item or service you sell to serve a customer's need or want. Inventory refers to a company's goods and products that are ready to sell, along with the raw materials that are used to produce them.
-   - Azure Kubernetes service: Simplifies deploying a managed Kubernetes cluster in Azure by offloading the operational overhead to Azure. Controller commands, Service layer repositories and Data Model encapsulated in AKS.
-   - Azure SQL: Azure SQL Database is an always-up-to-date, fully managed relational database service built for the cloud. Build your next app with the simplicity and flexibility of a multi-model database that scales to meet demand. Here, in this application azure sql holds the data of products.
-   - Azure Cosmos DB: It offers single-digit millisecond response times, automatic and instant scalability, along with guarantee speed at any scale. Here, in this application Cosmos DB holds the data of Stocks/Inventory.
+ * **Products and Stocks/Inventory**: A product is any item or service you sell to serve a customer's need or want. Inventory refers to a company's goods and products that are ready to sell, along with the raw materials that are used to produce them.
+   - **Azure Kubernetes service**: Simplifies deploying a managed Kubernetes cluster in Azure by offloading the operational overhead to Azure. Controller commands, Service layer repositories and Data Model encapsulated in AKS.
+   - **Azure SQL**: Azure SQL Database is an always-up-to-date, fully managed relational database service built for the cloud. Build your next app with the simplicity and flexibility of a multi-model database that scales to meet demand. Here, in this application azure sql holds the data of products.
+   - **Azure Cosmos DB**: It offers single-digit millisecond response times, automatic and instant scalability, along with guarantee speed at any scale. Here, in this application Cosmos DB holds the data of Stocks/Inventory.
 
- * Image Search: An image search engine is a tool that helps you find appropriate images to use in your online store.
-   - App Service (Containerized): A service that enables a developer to deploy containers on the Microsoft Azure public cloud without having to provision or manage any underlying infrastructure.
-   - Cognitive Service (Computer Vision): An AI service that analyzes content in images and video. The Computer Vision service provides developers with access to advanced algorithms for processing images and returning information.
-   - Storage Account: The storage account provides a unique namespace which provides highly available, durable, scalable and redundant storage. Here, in this application storage accounts stores the images of the products available in the application.
+ * **Image Search**: An image search engine is a tool that helps you find appropriate images to use in your online store.
+   - **App Service (Containerized)**: A service that enables a developer to deploy containers on the Microsoft Azure public cloud without having to provision or manage any underlying infrastructure.
+   - **Cognitive Service (Computer Vision)**: An AI service that analyzes content in images and video. The Computer Vision service provides developers with access to advanced algorithms for processing images and returning information.
+   - **Storage Account**: The storage account provides a unique namespace which provides highly available, durable, scalable and redundant storage. Here, in this application storage accounts stores the images of the products available in the application.
 
 
 ![](https://raw.githubusercontent.com/microsoft/ContosoTraders/main/docs/architecture/contoso-traders-enhancements.drawio.png)
