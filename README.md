@@ -16,39 +16,46 @@ Contoso Traders is a 2 tier application and consists of Client tier.
 
 Presentation tier conatins the React JS application that acts as a client, collects the the information given by the user and passes it to Database tier. It consists of a collection of small, autonomous services. Each service is self-contained and should implement a single business capability within a bounded context. A bounded context is a natural division within a business and provides an explicit boundary within which a domain model exists.
 
+## Major components of Solution Architecture:
+
 ### DEVOPS
 
-The word DevOps is a combination of the terms development and operations, meant to represent a collaborative or shared approach to the tasks performed by a company's application development and IT operations teams. While DevOps is not a technology, DevOps environments generally apply common methodologies.
+The word DevOps is a combination of the terms development and operations, meant to represent a collaborative or shared approach to the tasks performed by a company's application development and IT operations teams.
 
-DEVOPS consists of 2 components
+DEVOPS consists of 2 components:
 
 1. **GitHub (Reposistry and Actions)**: A code hosting platform for version control and collaboration.
 
    - **GitHub Repository**: A repository contains all of your project's files and each file's revision history. You can discuss and manage your project's work within the repository. You can find the **ContosoTraders** Application's GitHub repository here `https://github.com/microsoft/ContosoTraders`.
    - **GitHub Actions**: A continuous integration and continuous delivery (CI/CD) platform that allows you to automate your build, test, and deployment pipeline. In this application you are deploying Azure Infrastructure using the Bicep template with the GitHub Workflow.
 
-2. **Container Registry**: Allows you to build, store, and manage container images and artifacts in a private registry for all types of container deployments.
-    
+2. **Container Registry**: Allows you to build, store, and manage container images and artifacts in a private registry for all types of container deployments.   
 
 ### MICROSERVICES
 
 Microservices are a popular architectural style for building applications that are resilient, highly scalable, independently deployable, and able to evolve quickly. It consists of a collection of small, autonomous services. Each service is self-contained and should implement a single business capability within a bounded context. A bounded context is a natural division within a business and provides an explicit boundary within which a domain model exists.
 
-Backend tier consists of 3 API components that are containerized.
+Backend tier consists of 3 API components that are containerized:
 
-1. **Shopping Cart**: A place on a website that keeps a record of the items that you have chosen to buy from the website, until you pay for it.
-   - **Azure Container App**: Fully managed serverless container service for building and deploying modern apps at scale which helps in deploying containerised apps without managing complex infrastructure.
-   - **Azure Cosmos DB**: A fully managed NoSQL and relational database for modern app development. Cosmos DB holds the data of products which you add to the shopping cart.
+1. **Shopping Cart**: Azure Container App is fully managed serverless container service for building and deploying modern apps at scale which helps in deploying containerised apps without managing complex infrastructure. Azure Cosmos DB is a fully managed NoSQL and relational database for modern app development. Cosmos DB holds the data of products which you add to the shopping cart.
 
-2. **Products and Stocks/Inventory**: A product is any item or service you sell to serve a customer's need or want. Inventory refers to a company's goods and products that are ready to sell, along with the raw materials that are used to produce them.
-   - **Azure Kubernetes service**: Simplifies deploying a managed Kubernetes cluster in Azure by offloading the operational overhead to Azure. Controller commands, Service layer repositories and Data Model encapsulated in AKS.
-   - **Azure SQL**: Azure SQL Database is an always-up-to-date, fully managed relational database service built for the cloud. Build your next app with the simplicity and flexibility of a multi-model database that scales to meet demand. Here, in this application azure sql holds the data of products.
-   - **Azure Cosmos DB**: It offers single-digit millisecond response times, automatic and instant scalability, along with guarantee speed at any scale. Here, in this application Cosmos DB holds the data of Stocks/Inventory.
+2. **Products and Stocks/Inventory**: Azure Kubernetes service simplifies deploying a managed Kubernetes cluster in Azure by offloading the operational overhead to Azure. Controller commands, Service layer repositories and Data Model encapsulated in AKS. Azure SQL Database is an always-up-to-date, fully managed relational database service built for the cloud. Build your next app with the simplicity and flexibility of a multi-model database that scales to meet demand. It offers single-digit millisecond response times, automatic and instant scalability, along with guarantee speed at any scale.
 
-3. **Image Search**: An image search engine is a tool that helps you find appropriate images to use in your online store.
-   - **App Service (Containerized)**: A service that enables a developer to deploy containers on the Microsoft Azure public cloud without having to provision or manage any underlying infrastructure.
-   - **Cognitive Service (Computer Vision)**: An AI service that analyzes content in images and video. The Computer Vision service provides developers with access to advanced algorithms for processing images and returning the product information that are stored in the storage account.
-   - **Storage Account**: The storage account provides a unique namespace which provides highly available, durable, scalable and redundant storage. Here, in this application storage accounts stores the images of the products available in the application, which can be accessed by computer vision and app service.
+3. **Image Search**: An image search engine is a tool that helps you find appropriate images to use in your online store. The Computer Vision service provides developers with access to advanced algorithms for processing images and returning the product information that are stored in the storage account. The storage account provides a unique namespace which provides highly available, durable, scalable and redundant storage. Here, in this application storage accounts stores the images of the products available in the application, which can be accessed by computer vision and app service.
+
+### Gateway & IAM
+
+Application Gateway is a web traffic load balancer that enables you to manage traffic to your web applications. IAM is a cloud service that controls the permissions and access for users and cloud resources.
+
+1. **Azure Active Directory**: Azure AD is an integrated cloud identity and access solution, and a leader in the market for managing directories, enabling access to applications, and protecting identities.
+
+2. **API Managemnet (Gateway)**: Azure API Management offers a scalable, multi-cloud API management platform for securing, publishing and analysing APIs.
+
+### Front End
+
+The Front End is the part of the website where users can see and interact with such as the graphical user interface (GUI) and the command line including the design, navigating menus, texts, images, videos, etc.
+
+The primary use of a CDN is to decrease load times across a geographical area and DNS plays a major part in this. In order to make use of a CDN, the domain must point to a CDN provider. There are two App Service's in the application, one created with React JS is used as main website for ContosoTraders and other created using C#/ASP.Net for Rewards App. Power Apps is used to create the Shipping Management App where this app will be managing shipment. Storage Account is used to store the images of the products available in the application. 
 
 
 ![](https://raw.githubusercontent.com/microsoft/ContosoTraders/main/docs/architecture/contoso-traders-enhancements.drawio.png)
